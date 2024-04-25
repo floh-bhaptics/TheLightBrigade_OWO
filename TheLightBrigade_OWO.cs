@@ -11,7 +11,7 @@ using UnityEngine;
 using Unity.Mathematics;
 using System.Diagnostics;
 
-[assembly: MelonInfo(typeof(TheLightBrigade_OWO.TheLightBrigade_OWO), "TheLightBrigade_OWO", "1.0.0", "Florian Fahrenberger")]
+[assembly: MelonInfo(typeof(TheLightBrigade_OWO.TheLightBrigade_OWO), "TheLightBrigade_OWO", "1.0.1", "Florian Fahrenberger")]
 [assembly: MelonGame("Funktronic Labs", "The Light Brigade")]
 
 
@@ -135,7 +135,8 @@ namespace TheLightBrigade_OWO
             Vector3 patternOrigin = new Vector3(0f, 0f, 1f);
             // y is "up", z is "forward" in local coordinates
             Vector3 hitPosition = hitPoint - player.position;
-            Quaternion PlayerRotation = player.rotation * headRotation;
+            //Quaternion PlayerRotation = player.rotation * headRotation;
+            Quaternion PlayerRotation = headRotation;
             Vector3 playerDir = PlayerRotation.eulerAngles;
             // We only want rotation correction in y direction (left-right), top-bottom and yaw we can leave
             Vector3 flattenedHit = new Vector3(hitPosition.x, 0f, hitPosition.z);
